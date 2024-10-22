@@ -4,7 +4,6 @@
 @import url("../pages/header.css");
 @import url("../pages/profile.css");
 @import url("../pages/cards.css");
-@import url("../pages/");
 
 button:hover {
    cursor: pointer;
