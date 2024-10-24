@@ -11,16 +11,13 @@
 }
 
 .card__title {
-    font-family: 'InterBlack', sans-serif;
     font-size: 24px;
     font-style: normal;
     line-height: 29.05px;
     font-weight: 900;
-    font-display: swap;
     margin: 0;
     padding: 0;
     max-width: 219px;
-    src: url("./fonts/Inter-Medium.woff2") format("woff2");
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
