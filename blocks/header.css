@@ -1,19 +1,19 @@
-.header{
-    max-width: 880px;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-    min-height: 120px;
-    display: flex;
-    align-items: center
+.header {
+  max-width: 880px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
 }
 
-.header__logo{
-    width: 173px;
-    height: 33px;
+.header__logo {
+  width: 173px;
+  height: 33px;
 }
 
-@media screen and (max-width:620px)  {
-    .header__logo{
-        width: 126px;
-        height: 24px;
-    }
+@media screen and (max-width: 620px) {
+  .header__logo {
+    width: 126px;
+    height: 24px;
+  }
 }
