@@ -99,6 +99,8 @@
     text-align: center;
     font-size: 14px;
     line-height: 16.94px;
+    margin-bottom: 36px;
+
   }
 
   .profile__add-button {
@@ -106,8 +108,4 @@
     width: 100%;
   }
 
-    .profile__description{
-    margin-bottom: 36px;
-
-  }
 }
