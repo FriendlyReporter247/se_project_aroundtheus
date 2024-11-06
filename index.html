@@ -25,7 +25,8 @@
           <img
             src="./images/jacques-cousteau.jpg"
             alt="Avatar"
-            class="profile__image" />
+            class="profile__image"
+          />
           <div class="profile__info">
             <h1 class="profile__name">Jacques Cousteau</h1>
             <button type="submit" class="profile__edit-button"></button>
@@ -108,7 +109,17 @@
         <p class="footer__text">&copy; Patrick Velazquez 2024</p>
       </footer>
     </div>
-
+    <div class="modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <p class="modal__heading">Edit Profile</p>
+        <form class="modal__form">
+          <input type="text" name="title" />
+          <input type="text" name="description" />
+          <button class="modal__button">Save</button>
+        </form>
+      </div>
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

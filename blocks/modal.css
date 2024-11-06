@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 19px, 19px;
+}
+
+.modal__container {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.modal__close {
+  background-image: url(../images/Close-Icon.svg);
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: -46px;
+  right: -45px;
+  width: 40px;
+  height: 40px;
+  background-repeat: none;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.modal__heading {
+}
