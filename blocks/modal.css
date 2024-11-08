@@ -5,11 +5,11 @@
   bottom: 0;
   right: 0;
   z-index: 99;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 19px, 19px;
+  display: none;
 }
 
 .modal__container {
@@ -36,6 +36,10 @@
   background-size: contain;
   cursor: pointer;
   
+}
+
+.modal_open{
+    display: flex;
 }
 
 .modal__heading {
