@@ -35,91 +35,37 @@
           <button class="profile__add-button" type="button"></button>
         </section>
         <section class="cards page__section">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/yosemite-valley.jpg"
-                alt="Card Image"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__title">Yosemite Valley</p>
-                <button type="submit" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/lake-louise.jpg"
-                alt="Card Image"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__title">Lake Louise</p>
-                <button type="submit" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/bald-mountains.jpg"
-                alt="Card Image"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__title">Bald Mountains</p>
-                <button type="submit" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/latemar.jpg"
-                alt="Card Image"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__title">Latemar</p>
-                <button type="submit" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/vanoise-national-park.jpg"
-                alt="Card Image"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__title">Vanoise National Park</p>
-                <button type="submit" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/lago-di-braies.jpg"
-                alt="Card Image"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__title">Lago Di Braies</p>
-                <button type="submit" class="card__like-button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul id="card-template" class="cards__list"></ul>
         </section>
       </main>
       <footer class="footer page__section">
         <p class="footer__text">&copy; Patrick Velazquez 2024</p>
       </footer>
     </div>
-    <div class="modal">
+    <div id="edit-profile-modal" class="modal">
       <div class="modal__container">
         <button class="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
-          <input class="modal__input" type="text" name="title" placeholder="name" />
-          <input class="modal__input" type="text" name="description" placeholder="description" />
+          <input class="modal__input" id="modal__input_type_name" type="text" name="title" placeholder="name" />
+          <input class="modal__input" id="modal__input_type_description" type="text" name="description" placeholder="description" />
           <button class="modal__button">Save</button>
         </form>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
+    <template id="card-template">
+    <li class="card">
+      <img
+        src="#"
+        alt=""
+        class="card__image"
+      />
+      <div class="card__description">
+        <p class="card__title"></p>
+        <button type="submit" class="card__like-button"></button>
+      </div>
+    </li>
+  </template>
+    <script defer src="./scripts/index.js"></script>
   </body>
 </html>
