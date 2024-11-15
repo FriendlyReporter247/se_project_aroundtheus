@@ -115,7 +115,9 @@
 
   .modal__close{
     right: 0;
-    top: -55px;
+    top: -38px;
+    width: 26px;
+    height: 26px;
 }
 
 
