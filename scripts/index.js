@@ -88,7 +88,7 @@ modalCloseBtn.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
 
-editProfileModal.addEventListener("submit", handleProfileEditSubmit);
+editProfileModal.querySelector('.modal__form').addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((data) => {
   renderCard(data, cardsList);

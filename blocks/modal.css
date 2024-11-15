@@ -48,7 +48,6 @@
     font-size: 24px;
     line-height: 29.05px;
     height: 23px;
-    width: 330px;
     margin-bottom: 54px;
 }
 
@@ -71,7 +70,7 @@
     display: flex;
     flex-direction: column;
     gap: 29.74px;
-    width: 358px;
+    max-width: 358px;
     height: 27.26;
     border: none;
     border-bottom: 1px solid #000;
@@ -80,5 +79,45 @@
 .modal__input{
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    width: 100%;
     
+}
+
+@media screen and (max-width: 620px) {
+  .modal__form {
+    max-width: 238px;
+  }
+  
+  
+  .modal__heading{
+    font-size: 18px;
+    line-height: 21.78px;
+    width: 100%;
+    max-width: 238px;
+    
+  }
+
+  .modal__button{
+    font-size: 14px;
+    line-height: 16.94px;
+    max-width: 100%;
+
+  }
+
+  .modal__container{
+    width: 282px;
+    height: 322px;
+    padding: 19px;
+    margin: 19px;
+    top: 123px;
+    align-items: center;
+  }
+
+  .modal__close{
+    right: 0;
+    top: -55px;
+}
+
+
+
 }
