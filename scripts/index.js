@@ -29,6 +29,7 @@ const initialCards = [
   },
 ];
 
+const modals = document.querySelectorAll(".modal")
 const modal = document.querySelector(".modal");
 
 const cardTemplate = document
@@ -65,6 +66,11 @@ const profileEditForm = document.querySelector(".profile__edit-form");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
+const imageModal = document.querySelector("#image-modal");
+const imageModalImage = imageModal.querySelector(".modal__image");
+const modalCaption = imageModal.querySelector(".modal__caption");
+const closeModalBtn = document.querySelector(".modal__close");
+
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
 /* -------------------------------------------------------------------------- */
@@ -96,8 +102,20 @@ function handleProfileEditSubmit(evt) {
 }
 
 function handlePreviewImage(data) {
-  imageElement.src = data.url;
-  openModal(imagePreviewModal);
+  imageModalImage.src = data.link;
+  imageModalImage.alt = data.name;
+  modalCaption.textContent = data.name;
+
+  openModal(imageModal);
+}
+
+function handleModalClose(evt) {
+  if (
+    evt.target.classList.contains("modal") ||
+    evt.target.classList.contains("modal__close")
+  ) {
+    closeModal(evt.currentTarget);
+  }
 }
 
 function getCardElement(data) {
@@ -117,8 +135,8 @@ function getCardElement(data) {
   });
 
   likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active")
-  } );
+    likeButton.classList.toggle("card__like-button_active");
+  });
 
   return cardElement;
 }
@@ -135,9 +153,7 @@ function renderCard(data, wrap) {
 profileAddCardBtn.addEventListener("click", () => {
   openModal(addCardModal);
 });
-addCardModalCloseBtn.addEventListener("click", () => {
-  closeModal(addCardModal);
-});
+
 
 profileEditBtn.addEventListener("click", () => {
   profileTitleInput.value = profileName.textContent;
@@ -145,12 +161,7 @@ profileEditBtn.addEventListener("click", () => {
   openModal(editProfileModal);
 });
 
-modalCloseBtn.addEventListener("click", () => {
-  closeModal(editProfileModal);
-});
-
 editProfileForm.addEventListener("submit", handleProfileEditSubmit);
-
 
 addCardModal.addEventListener("submit", handleAddCardSubmit);
 
@@ -163,6 +174,10 @@ likeButtons.forEach((likeButton) => {
 /* -------------------------------------------------------------------------- */
 /*                               initialization                               */
 /* -------------------------------------------------------------------------- */
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", handleModalClose);
+});
 
 initialCards.forEach((data) => {
   renderCard(data, cardsList);
