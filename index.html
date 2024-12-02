@@ -32,7 +32,7 @@
             <button type="button" class="profile__edit-button"></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button class="profile__add-card-button" type="button"></button>
         </section>
         <section class="cards page__section">
           <ul id="cards-list" class="cards__list"></ul>
@@ -42,6 +42,7 @@
         <p class="footer__text">&copy; Patrick Velazquez 2024</p>
       </footer>
     </div>
+    <!-- Edit Profile Modal -->
     <div id="edit-profile-modal" class="modal">
       <div class="modal__container">
         <button class="modal__close"></button>
@@ -65,12 +66,39 @@
         </form>
       </div>
     </div>
+
+    <!-- Add Card Modal -->
+     <div id="add-card-modal" class="modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <p class="modal__heading">New Place</p>
+        <form class="modal__form">
+          <input
+            class="modal__input"
+            id="modal__input_type_title"
+            type="text"
+            name="title"
+            placeholder="Title"
+          />
+          <input
+            class="modal__input"
+            id="modal__input_type_url"
+            type="url"
+            name="url"
+            placeholder="url"
+          />
+          <button class="modal__button">Save</button>
+        </form>
+      </div>
+     </div>
+
+     <!-- Card Template Modal -->
     <template id="card-template">
       <li class="card">
         <img src="#" alt="" class="card__image" />
         <div class="card__description">
           <p class="card__title"></p>
-          <button type="submit" class="card__like-button"></button>
+          <button type="button" class="card__like-button"></button>
         </div>
       </li>
     </template>
