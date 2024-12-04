@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                           constanst and elements                           */
+/*                           constants and elements                           */
 /* -------------------------------------------------------------------------- */
 
 const initialCards = [
@@ -29,7 +29,7 @@ const initialCards = [
   },
 ];
 
-const modals = document.querySelectorAll(".modal")
+const modals = document.querySelectorAll(".modal");
 const modal = document.querySelector(".modal");
 
 const cardTemplate = document
@@ -101,6 +101,13 @@ function handleProfileEditSubmit(evt) {
   closeModal(editProfileModal);
 }
 
+function handleCardDelete(event) {
+  const cardElement = event.target.closest(".card");
+  if (cardElement) {
+    cardElement.remove();
+  }
+}
+
 function handlePreviewImage(data) {
   imageModalImage.src = data.link;
   imageModalImage.alt = data.name;
@@ -123,7 +130,7 @@ function getCardElement(data) {
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
-  const deleteButton = cardElement.querySelector(".card__delete-button");
+  const deleteButton = cardElement.querySelector(".card__delete");
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
@@ -136,6 +143,10 @@ function getCardElement(data) {
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
+  });
+
+  deleteButton.addEventListener("click", (event) => {
+    handleCardDelete(event);
   });
 
   return cardElement;
@@ -153,7 +164,6 @@ function renderCard(data, wrap) {
 profileAddCardBtn.addEventListener("click", () => {
   openModal(addCardModal);
 });
-
 
 profileEditBtn.addEventListener("click", () => {
   profileTitleInput.value = profileName.textContent;
@@ -182,3 +192,5 @@ modals.forEach((modal) => {
 initialCards.forEach((data) => {
   renderCard(data, cardsList);
 });
+
+const deleteButtons = document.querySelectorAll(".card__delete");
