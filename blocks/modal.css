@@ -44,6 +44,7 @@
   cursor: pointer;
 }
 
+
 .modal__heading {
   color: #000;
   font-weight: 900;
@@ -70,9 +71,10 @@
 
 .modal__preview {
   max-height: 75vh;
-  max-width: 75vh;
+  max-width: 75vw;
   border: none;
   background: transparent;
+  padding: 0;
 }
 
 .modal__form {

@@ -30,7 +30,6 @@ const initialCards = [
 ];
 
 const modals = document.querySelectorAll(".modal");
-const modal = document.querySelector(".modal");
 
 const cardTemplate = document
   .querySelector("#card-template")
@@ -69,7 +68,6 @@ const profileDescription = document.querySelector(".profile__description");
 const imageModal = document.querySelector("#image-modal");
 const imageModalImage = imageModal.querySelector(".modal__image");
 const modalCaption = imageModal.querySelector(".modal__caption");
-const closeModalBtn = document.querySelector(".modal__close");
 
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
@@ -173,13 +171,9 @@ profileEditBtn.addEventListener("click", () => {
 
 editProfileForm.addEventListener("submit", handleProfileEditSubmit);
 
-addCardModal.addEventListener("submit", handleAddCardSubmit);
+addCardFormElements.addEventListener("submit", handleAddCardSubmit);
 
-likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle(".card__like-button_active");
-  });
-});
+
 
 /* -------------------------------------------------------------------------- */
 /*                               initialization                               */
@@ -193,4 +187,4 @@ initialCards.forEach((data) => {
   renderCard(data, cardsList);
 });
 
-const deleteButtons = document.querySelectorAll(".card__delete");
+
