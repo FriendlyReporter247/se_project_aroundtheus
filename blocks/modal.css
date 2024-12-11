@@ -69,6 +69,12 @@
   margin-top: 48px;
 }
 
+.modal__button_inactive {
+  cursor: not-allowed;
+  opacity: 20%;
+  
+}
+
 .modal__preview {
   max-height: 75vh;
   max-width: 75vw;
@@ -84,7 +90,6 @@
   max-width: 358px;
   height: 27.26;
   border: none;
-  border-bottom: 1px solid #000;
 }
 
 .modal__input {
@@ -92,6 +97,21 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   width: 100%;
 }
+
+.modal__error_visible {
+  color: red;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.modal__input_type_error::placeholder {
+  color: red; 
+
+}
+
+
 
 @media screen and (max-width: 620px) {
   .modal__form {

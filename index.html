@@ -54,14 +54,29 @@
             type="text"
             name="title"
             placeholder="name"
+            maxlength="40"
+            minlength="2"
+            required
           />
+          <span class="error__message" id="modal__input_type_name-error"></span>
+          <!-- Validation message -->
+
           <input
             class="modal__input"
             id="modal__input_type_description"
             type="text"
             name="description"
             placeholder="description"
+            maxlength="200"
+            minlength="2"
+            required
           />
+          <span
+            class="error__message"
+            id="modal__input_type_description-error"
+          ></span>
+          <!-- Validation message -->
+
           <button class="modal__button">Save</button>
         </form>
       </div>
@@ -79,15 +94,28 @@
             type="text"
             name="title"
             placeholder="Title"
+            maxlength="30"
+            minlength="1"
+            required
           />
+          <span
+            class="error__message"
+            id="modal__input_type_title-error"
+          ></span>
+          <!-- Validation message -->
+
           <input
             class="modal__input"
             id="modal__input_type_url"
             type="url"
             name="url"
             placeholder="url"
+            required
           />
-          <button class="modal__button">Save</button>
+          <span class="error__message" id="modal__input_type_url-error"></span>
+          <!-- Validation message -->
+
+          <button class="modal__button modal__button_inactive">Save</button>
         </form>
       </div>
     </div>
@@ -112,5 +140,6 @@
       </div>
     </div>
     <script defer src="./scripts/index.js"></script>
+    <script defer src="./scripts/validation.js"></script>
   </body>
 </html>

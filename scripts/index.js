@@ -123,6 +123,15 @@ function handleModalClose(evt) {
   }
 }
 
+function handleKeyDown(event) {
+  if (event.key === 'Escape') { // Check if the Esc key is pressed
+    const modal = document.querySelector('.modal.modal_open'); // Select the currently open modal
+    if (modal) {
+      closeModal(modal); // Close the modal
+    }
+  }
+}
+
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
@@ -173,7 +182,7 @@ editProfileForm.addEventListener("submit", handleProfileEditSubmit);
 
 addCardFormElements.addEventListener("submit", handleAddCardSubmit);
 
-
+document.addEventListener('keydown', handleKeyDown);
 
 /* -------------------------------------------------------------------------- */
 /*                               initialization                               */
@@ -188,3 +197,6 @@ initialCards.forEach((data) => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  enableValidation(config);
+});
