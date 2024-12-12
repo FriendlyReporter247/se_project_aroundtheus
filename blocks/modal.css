@@ -44,7 +44,6 @@
   cursor: pointer;
 }
 
-
 .modal__heading {
   color: #000;
   font-weight: 900;
@@ -72,7 +71,6 @@
 .modal__button_inactive {
   cursor: not-allowed;
   opacity: 20%;
-  
 }
 
 .modal__preview {
@@ -98,8 +96,15 @@
   width: 100%;
 }
 
+.modal__error {
+  position: absolute;
+}
+
 .modal__error_visible {
+  display: block;
+  margin-top: 5px;
   color: red;
+  font-size: 12px;
 }
 
 .modal__input_type_error {
@@ -107,11 +112,12 @@
 }
 
 .modal__input_type_error::placeholder {
-  color: red; 
-
+  color: red;
 }
 
-
+.modal__label {
+  position: relative;
+}
 
 @media screen and (max-width: 620px) {
   .modal__form {

@@ -48,22 +48,24 @@
         <button class="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
-          <input
-            class="modal__input"
-            id="modal__input_type_name"
-            type="text"
-            name="title"
-            placeholder="name"
-            maxlength="40"
-            minlength="2"
-            required
-          />
-          <span class="error__message" id="modal__input_type_name-error"></span>
+          <label class="modal__label" for="name">
+            <input
+              class="modal__input"
+              id="modal-input-type-name"
+              type="text"
+              name="title"
+              placeholder="name"
+              maxlength="40"
+              minlength="2"
+              required
+            />
+            <span class="modal__error" id="modal-input-type-name-error"></span>
+          </label>
           <!-- Validation message -->
-
+          <label class="modal__label" for="description">
           <input
             class="modal__input"
-            id="modal__input_type_description"
+            id="modal-input-type-description"
             type="text"
             name="description"
             placeholder="description"
@@ -72,9 +74,10 @@
             required
           />
           <span
-            class="error__message"
-            id="modal__input_type_description-error"
+            class="modal__error"
+            id="modal-input-type-description-error"
           ></span>
+          </label>
           <!-- Validation message -->
 
           <button class="modal__button">Save</button>
@@ -88,9 +91,10 @@
         <button class="modal__close"></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form">
+          <label class="modal__label" for="title">
           <input
             class="modal__input"
-            id="modal__input_type_title"
+            id="modal-input-type-title"
             type="text"
             name="title"
             placeholder="Title"
@@ -98,21 +102,20 @@
             minlength="1"
             required
           />
-          <span
-            class="error__message"
-            id="modal__input_type_title-error"
-          ></span>
+          <span class="modal__error" id="modal-input-type-title-error"></span>
+          </label>
           <!-- Validation message -->
-
+          <label class="modal__label" for="url">
           <input
             class="modal__input"
-            id="modal__input_type_url"
+            id="modal-input-type-url"
             type="url"
             name="url"
             placeholder="url"
             required
           />
-          <span class="error__message" id="modal__input_type_url-error"></span>
+          <span class="modal__error" id="modal-input-type-url-error"></span>
+          </label>
           <!-- Validation message -->
 
           <button class="modal__button modal__button_inactive">Save</button>

@@ -39,18 +39,18 @@ const cardsList = document.querySelector(".cards__list");
 // Edit Profile
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileTitleInput = editProfileModal.querySelector(
-  "#modal__input_type_name"
+  "#modal-input-type-name"
 );
 const profileDescriptionInput = editProfileModal.querySelector(
-  "#modal__input_type_description"
+  "#modal-input-type-description"
 );
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 
 
 // Add Card
 const addCardModal = document.querySelector("#add-card-modal");
-const cardNameInput = addCardModal.querySelector("#modal__input_type_title");
-const cardLinkInput = addCardModal.querySelector("#modal__input_type_url");
+const cardNameInput = addCardModal.querySelector("#modal-input-type-title");
+const cardLinkInput = addCardModal.querySelector("#modal-input-type-url");
 const addCardModalCloseBtn = addCardModal.querySelector(".modal__close");
 const addCardFormElements = addCardModal.querySelector(".modal__form");
 
@@ -85,12 +85,12 @@ function handleAddCardSubmit(event) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_open");
-  document.removeEventListener('keydown', handleKeyDown); // Remove the listener when closing the modal
+  document.removeEventListener('keydown', handleKeyDown); 
 }
 
 function openModal(modal) {
   modal.classList.add("modal_open");
-  document.addEventListener('keydown', handleKeyDown); // Add the listener when opening the modal
+  document.addEventListener('keydown', handleKeyDown); 
 }
 
 function handleProfileEditSubmit(evt) {
@@ -126,10 +126,10 @@ function handleModalClose(evt) {
 }
 
 function handleKeyDown(event) {
-  if (event.key === 'Escape') { // Check if the Esc key is pressed
-    const modal = document.querySelector('.modal.modal_open'); // Select the currently open modal
+  if (event.key === 'Escape') { 
+    const modal = document.querySelector('.modal.modal_open'); 
     if (modal) {
-      closeModal(modal); // Close the modal
+      closeModal(modal); 
     }
   }
 }
