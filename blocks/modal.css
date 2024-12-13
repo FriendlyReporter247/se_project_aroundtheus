@@ -30,6 +30,14 @@
   padding: 36px;
 }
 
+.modal__container-preview {
+  max-height: 75vh;
+  max-width: 75vw;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
 .modal__close {
   background-image: url(../images/Close-Icon.svg);
   border: none;
@@ -146,10 +154,23 @@
     align-items: center;
   }
 
-  .modal__close {
+  .modal__container-preview{
+    padding: 0;
+
+  }
+
+  .modal__preview{
+    padding: 0;
+  }
+
+    .modal__close {
     right: 0;
     top: -38px;
     width: 26px;
     height: 26px;
+  }
+
+  .modal__close-preview {
+    right: -30px;
   }
 }

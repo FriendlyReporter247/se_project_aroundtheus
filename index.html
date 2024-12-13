@@ -48,7 +48,7 @@
         <button class="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
-          <label class="modal__label" for="name">
+          <label class="modal__label" for="modal-input-type-name">
             <input
               class="modal__input"
               id="modal-input-type-name"
@@ -62,7 +62,7 @@
             <span class="modal__error" id="modal-input-type-name-error"></span>
           </label>
           <!-- Validation message -->
-          <label class="modal__label" for="description">
+          <label class="modal__label" for="modal-input-type-description">
           <input
             class="modal__input"
             id="modal-input-type-description"
@@ -91,7 +91,7 @@
         <button class="modal__close"></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form">
-          <label class="modal__label" for="title">
+          <label class="modal__label" for="modal-input-type-title">
           <input
             class="modal__input"
             id="modal-input-type-title"
@@ -105,7 +105,7 @@
           <span class="modal__error" id="modal-input-type-title-error"></span>
           </label>
           <!-- Validation message -->
-          <label class="modal__label" for="url">
+          <label class="modal__label" for="modal-input-type-url">
           <input
             class="modal__input"
             id="modal-input-type-url"
@@ -136,10 +136,10 @@
     </template>
     <!--Card Preview Modal-->
     <div id="image-modal" class="modal">
-      <div class="modal__container modal__preview">
+      <div class="modal__container modal__container-preview" >
         <img class="modal__image modal__preview" src="#" alt="" />
         <p class="modal__caption"></p>
-        <button class="modal__close"></button>
+        <button class="modal__close modal__close-preview"></button>
       </div>
     </div>
     <script defer src="./scripts/index.js"></script>
