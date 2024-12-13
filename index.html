@@ -48,36 +48,41 @@
         <button class="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
-          <label class="modal__label" for="modal-input-type-name">
-            <input
-              class="modal__input"
-              id="modal-input-type-name"
-              type="text"
-              name="title"
-              placeholder="name"
-              maxlength="40"
-              minlength="2"
-              required
-            />
-            <span class="modal__error" id="modal-input-type-name-error"></span>
-          </label>
-          <!-- Validation message -->
-          <label class="modal__label" for="modal-input-type-description">
-          <input
-            class="modal__input"
-            id="modal-input-type-description"
-            type="text"
-            name="description"
-            placeholder="description"
-            maxlength="200"
-            minlength="2"
-            required
-          />
-          <span
-            class="modal__error"
-            id="modal-input-type-description-error"
-          ></span>
-          </label>
+          <div class="modal__labels">
+            <label class="modal__label" for="modal-input-type-name">
+              <input
+                class="modal__input"
+                id="modal-input-type-name"
+                type="text"
+                name="title"
+                placeholder="name"
+                maxlength="40"
+                minlength="2"
+                required
+              />
+              <span
+                class="modal__error"
+                id="modal-input-type-name-error"
+              ></span>
+            </label>
+            <!-- Validation message -->
+            <label class="modal__label" for="modal-input-type-description">
+              <input
+                class="modal__input"
+                id="modal-input-type-description"
+                type="text"
+                name="description"
+                placeholder="description"
+                maxlength="200"
+                minlength="2"
+                required
+              />
+              <span
+                class="modal__error"
+                id="modal-input-type-description-error"
+              ></span>
+            </label>
+          </div>
           <!-- Validation message -->
 
           <button class="modal__button">Save</button>
@@ -91,34 +96,39 @@
         <button class="modal__close"></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form">
-          <label class="modal__label" for="modal-input-type-title">
-          <input
-            class="modal__input"
-            id="modal-input-type-title"
-            type="text"
-            name="title"
-            placeholder="Title"
-            maxlength="30"
-            minlength="1"
-            required
-          />
-          <span class="modal__error" id="modal-input-type-title-error"></span>
-          </label>
-          <!-- Validation message -->
-          <label class="modal__label" for="modal-input-type-url">
-          <input
-            class="modal__input"
-            id="modal-input-type-url"
-            type="url"
-            name="url"
-            placeholder="url"
-            required
-          />
-          <span class="modal__error" id="modal-input-type-url-error"></span>
-          </label>
+          <div class="modal__labels">
+            <label class="modal__label" for="modal-input-type-title">
+              <input
+                class="modal__input"
+                id="modal-input-type-title"
+                type="text"
+                name="title"
+                placeholder="Title"
+                maxlength="30"
+                minlength="1"
+                required
+              />
+              <span
+                class="modal__error"
+                id="modal-input-type-title-error"
+              ></span>
+            </label>
+            <!-- Validation message -->
+            <label class="modal__label" for="modal-input-type-url">
+              <input
+                class="modal__input"
+                id="modal-input-type-url"
+                type="url"
+                name="url"
+                placeholder="Image link"
+                required
+              />
+              <span class="modal__error" id="modal-input-type-url-error"></span>
+            </label>
+          </div>
           <!-- Validation message -->
 
-          <button class="modal__button modal__button_inactive">Save</button>
+          <button class="modal__button modal__button_inactive">Create</button>
         </form>
       </div>
     </div>
@@ -136,7 +146,7 @@
     </template>
     <!--Card Preview Modal-->
     <div id="image-modal" class="modal">
-      <div class="modal__container modal__container-preview" >
+      <div class="modal__container modal__container-preview">
         <img class="modal__image modal__preview" src="#" alt="" />
         <p class="modal__caption"></p>
         <button class="modal__close modal__close-preview"></button>
