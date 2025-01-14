@@ -32,22 +32,19 @@ const initialCards = [
   },
 ];
 
-
 /* -------------------------------------------------------------------------- */
 /*                                  Constants                                 */
 /* -------------------------------------------------------------------------- */
 
 const modals = document.querySelectorAll(".modal");
 
-
 const config = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__submit_disabled",
+  inactiveButtonClass: "modal__button_inactive",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+  errorClass: "modal__error_visible"
 };
-
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileTitleInput = editProfileModal.querySelector(
@@ -70,6 +67,9 @@ const profileAddCardBtn = document.querySelector(".profile__add-card-button");
 const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
 
+const editProfileFormValidator = new FormValidator(config, editProfileForm);
+editProfileFormValidator.enableValidation();
+
 
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -80,12 +80,12 @@ const profileDescription = document.querySelector(".profile__description");
 
 function openModal(modal) {
   modal.classList.add("modal_open");
-  document.addEventListener('keydown', handleKeyDown); 
+  document.addEventListener("keydown", handleKeyDown);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_open");
-  document.removeEventListener('keydown', handleKeyDown); 
+  document.removeEventListener("keydown", handleKeyDown);
 }
 
 function handleProfileEditSubmit(evt) {
@@ -105,7 +105,7 @@ function handleImageClick({ name, link }) {
   imageModalImage.alt = name;
   modalCaption.textContent = name;
 
-  imageModal.classList.add("modal_open");
+  openModal(imageModal);
 }
 
 function createCard(data) {
@@ -118,10 +118,10 @@ function createCard(data) {
 }
 
 function handleKeyDown(event) {
-  if (event.key === 'Escape') { 
-    const modal = document.querySelector('.modal.modal_open'); 
+  if (event.key === "Escape") {
+    const modal = document.querySelector(".modal.modal_open");
     if (modal) {
-      closeModal(modal); 
+      closeModal(modal);
     }
   }
 }
