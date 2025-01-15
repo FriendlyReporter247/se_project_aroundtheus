@@ -46,6 +46,10 @@ const config = {
   errorClass: "modal__error_visible"
 };
 
+const imageModal = document.querySelector("#image-modal");
+const imageModalImage = imageModal.querySelector(".modal__image");
+const modalCaption = imageModal.querySelector(".modal__caption");
+
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileTitleInput = editProfileModal.querySelector(
   "#modal-input-type-name"
@@ -97,10 +101,6 @@ function handleProfileEditSubmit(evt) {
 }
 
 function handleImageClick({ name, link }) {
-  const imageModal = document.querySelector("#image-modal");
-  const imageModalImage = imageModal.querySelector(".modal__image");
-  const modalCaption = imageModal.querySelector(".modal__caption");
-
   imageModalImage.src = link;
   imageModalImage.alt = name;
   modalCaption.textContent = name;
@@ -148,8 +148,7 @@ addCardForm.addEventListener("submit", (evt) => {
   const cardData = { name: cardNameInput.value, link: cardLinkInput.value };
   cardsList.prepend(createCard(cardData));
   addCardForm.reset();
-  addCardFormValidator.resetValidation();
-  addCardModal.classList.remove("modal_open");
+  closeModal(addCardModal);
 });
 
 editProfileButton.addEventListener("click", () => {
