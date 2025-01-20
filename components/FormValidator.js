@@ -71,5 +71,6 @@ export default class FormValidator {
       this._hideInputError(inputElement);
     });
     this._toggleButtonState();
+    // toggle button state is here 
   }
 }

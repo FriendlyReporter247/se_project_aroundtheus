@@ -149,6 +149,7 @@ addCardForm.addEventListener("submit", (evt) => {
   cardsList.prepend(createCard(cardData));
   addCardForm.reset();
   addCardFormValidator.resetValidation();
+  addCardFormValidator._toggleButtonState();
   closeModal(addCardModal);
   
 });
