@@ -148,8 +148,7 @@ addCardForm.addEventListener("submit", (evt) => {
   const cardData = { name: cardNameInput.value, link: cardLinkInput.value };
   cardsList.prepend(createCard(cardData));
   addCardForm.reset();
-  addCardFormValidator.resetValidation();
-  addCardFormValidator._toggleButtonState();
+  addCardFormValidator.toggleButtonState();
   closeModal(addCardModal);
   
 });
