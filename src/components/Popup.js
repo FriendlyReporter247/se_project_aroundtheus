@@ -11,12 +11,12 @@ class Popup {
   }
 
   open() {
-    this._popupElement.classList.add("modal__open");
+    this._popupElement.classList.add("modal_open");
     document.addEventListener("keyup", this._handleEscUp);
   }
 
   close() {
-    this._popupElement.classList.remove("modal__open");
+    this._popupElement.classList.remove("modal_open");
     document.removeEventListener("keyup", this._handleEscUp);
   }
 
@@ -30,7 +30,6 @@ class Popup {
       }
     });
   }
-
 }
 
 export default Popup;
