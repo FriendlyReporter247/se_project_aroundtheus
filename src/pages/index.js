@@ -7,6 +7,7 @@ import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { config, initialCards } from "../utils/constants.js";
 
+
 const editProfileButton = document.querySelector(".profile__edit-button");
 const addCardButton = document.querySelector(".profile__add-card-button");
 
@@ -19,12 +20,7 @@ const section = new Section(
   {
     items: initialCards,
     renderer: (data) => {
-      const card = new Card({
-        data,
-        cardSelector: "#card-template",
-        handleImageClick: (data) => popupWithImage.open(data),
-      });
-      return card.generateCard();
+    return createCard(data);
     },
   },
   ".cards__list"
@@ -47,28 +43,29 @@ const popupEditProfile = new PopupWithForm({
 
 popupEditProfile.setEventListeners();
 
-// document
-// .querySelector(".profile__edit-button")
-// .addEventListener("click", () => {
-//   const userData = userInfo.getUserInfo();
-//   document.querySelector("#modal-input-type-name").value = userData.userName;
-//   document.querySelector("#modal-input-type-description").value =
-//     userData.userDescription;
-//   popupEditProfile.open();
-// });
 
 const popupAddCard = new PopupWithForm({
   popupSelector: "#add-card-modal",
   handleFormSubmit: (formData) => {
-    const newCard = new Card({
-      data: { name: formData.title, link: formData.url },
-      cardSelector: "#card-template",
-      handleImageClick: (data) => popupWithImage.open(data),
-    });
-    section.addItem(newCard.generateCard());
+    const card = createCard(formData);
+    section.addItem(card);
     popupAddCard.close();
   },
+  
 });
+
+
+function createCard(data) {
+  const card = new Card({
+    data,
+    cardSelector: "#card-template",
+    handleImageClick: (data) => popupWithImage.open(data),
+  });
+    return card.generateCard();
+  }
+  
+
+
 popupAddCard.setEventListeners();
 
 addCardButton.addEventListener("click", () => {
