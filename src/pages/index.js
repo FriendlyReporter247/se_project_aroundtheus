@@ -7,9 +7,10 @@ import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { config, initialCards } from "../utils/constants.js";
 
-
 const editProfileButton = document.querySelector(".profile__edit-button");
 const addCardButton = document.querySelector(".profile__add-card-button");
+const addCardModal = document.querySelector("#add-card-modal");
+const addCardForm = addCardModal.querySelector(".modal__form");
 
 const userInfo = new UserInfo({
   userNameSelector: ".profile__name",
@@ -20,7 +21,7 @@ const section = new Section(
   {
     items: initialCards,
     renderer: (data) => {
-    return createCard(data);
+      return createCard(data);
     },
   },
   ".cards__list"
@@ -43,17 +44,15 @@ const popupEditProfile = new PopupWithForm({
 
 popupEditProfile.setEventListeners();
 
-
 const popupAddCard = new PopupWithForm({
   popupSelector: "#add-card-modal",
   handleFormSubmit: (formData) => {
     const card = createCard(formData);
     section.addItem(card);
     popupAddCard.close();
+    addCardForm.reset();
   },
-  
 });
-
 
 function createCard(data) {
   const card = new Card({
@@ -61,10 +60,8 @@ function createCard(data) {
     cardSelector: "#card-template",
     handleImageClick: (data) => popupWithImage.open(data),
   });
-    return card.generateCard();
-  }
-  
-
+  return card.generateCard();
+}
 
 popupAddCard.setEventListeners();
 
@@ -74,6 +71,13 @@ addCardButton.addEventListener("click", () => {
 
 editProfileButton.addEventListener("click", () => {
   popupEditProfile.open();
+  const userData = userInfo.getUserInfo();
+  const userName = document.querySelector("#modal-input-type-name");
+  const userDescription = document.querySelector(
+    "#modal-input-type-description"
+  );
+  userName.value = userData.userName;
+  userDescription.value = userData.userDescription;
 });
 
 const editProfileFormValidator = new FormValidator(
