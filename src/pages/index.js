@@ -51,6 +51,7 @@ const popupAddCard = new PopupWithForm({
     section.addItem(card);
     popupAddCard.close();
     addCardForm.reset();
+    addCardFormValidator.resetValidation();
   },
 });
 
@@ -86,8 +87,5 @@ const editProfileFormValidator = new FormValidator(
 );
 editProfileFormValidator.enableValidation();
 
-const addCardFormValidator = new FormValidator(
-  config,
-  document.querySelector("#add-card-modal .modal__form")
-);
+const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
