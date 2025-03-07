@@ -21,13 +21,15 @@
         />
       </header>
       <main class="content">
+        <div>
         <section class="profile page__section">
-          <img
+          <div class="profile__avatar"><img 
             src="<%=require('./images/jacques-cousteau.jpg')%>"
             alt="Avatar"
             class="profile__image"
           />
-          <div class="profile__info">
+          <button class="profile__image-edit"></button></div>
+            <div class="profile__info">
             <h1 class="profile__name">Jacques Cousteau</h1>
             <button type="button" class="profile__edit-button"></button>
             <p class="profile__description">Explorer</p>
@@ -152,6 +154,44 @@
         <img class="modal__image modal__preview" src="#" alt="" />
         <p class="modal__caption"></p>
         <button class="modal__close modal__close-preview"></button>
+      </div>
+    </div>
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-confirmation-modal" class="modal">
+      <div class="modal__container modal__container-delete">
+        <button class="modal__close"></button>
+          <p class="modal__heading modal__heading-delete">Are you sure?</p>
+          <form>
+          <button type="submit" class="modal__button modal__button-delete">Yes</button>
+        </form>
+        </div>
+    
+</div>  
+<!-- Edit Profile Avatar Modal -->
+<div id="edit-profile-avatar-modal" class="modal">
+  <div class="modal__container">
+    <button class="modal__close"></button>
+    <p class="modal__heading">Change Profile Picture</p>
+      <form class="modal__form">
+      <div class="modal__labels">
+      <label class="modal__label" for="modal-input-type-avatar-url">
+      <input
+        class="modal__input"
+        id="modal-input-type-avatar-url"
+        type="url"
+        name="avatar"
+        placeholder="Avatar URL"
+        required
+      />
+      <span
+        class="modal__error"
+        id="modal-input-type-avatar-url-error"
+      ></span>
+    </label>
+  </div>
+  <button disabled class="modal__button modal__button_inactive">Save</button>
+</form>
+</div>
       </div>
     </div>
   </body>
