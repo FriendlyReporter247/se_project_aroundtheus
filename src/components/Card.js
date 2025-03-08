@@ -28,10 +28,13 @@ export default class Card {
     this._cardElement = null;
   }
 
+  toggleLike() {
+    this._likeButton.classList.toggle("card__like-button_active");
+  }
+
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => {
-      this._likeButton.classList.toggle("card__like-button_active");
-      this._handleLikeClick(this._cardId);
+      this._handleLikeClick(this);
     });
 
     this._deleteButton.addEventListener("click", () => {
@@ -59,13 +62,12 @@ export default class Card {
     return this._cardElement;
   }
 
-  _renderLike () {
+  _renderLike() {
     if (this._isLiked) {
       this._likeButton.classList.add("card__like-button_active");
-      } else {
-        this._likeButton.classList.remove("card__like-button_active");
-      }
-
+    } else {
+      this._likeButton.classList.remove("card__like-button_active");
+    }
   }
 
   isLiked() {

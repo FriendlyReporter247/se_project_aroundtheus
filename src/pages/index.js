@@ -17,7 +17,6 @@ const editAvatarModal = document.querySelector("#edit-profile-avatar-modal");
 const editAvatarForm = editAvatarModal.querySelector(".modal__form");
 const editAvatarButton = document.querySelector(".profile__image-edit");
 
-
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -64,7 +63,7 @@ const popupEditProfile = new PopupWithForm({
       })
       .catch((err) => console.error(err))
       .finally(() => {
-        popupEditProfile.setSubmitButtonText();
+        popupEditProfile.setSubmitButtonText("Save");
       });
   },
 });
@@ -91,7 +90,7 @@ const popupEditProfileAvatar = new PopupWithForm({
       })
       .catch((err) => console.error(err))
       .finally(() => {
-        popupEditProfile.setSubmitButtonText()
+        popupEditProfile.setSubmitButtonText("Save");
       });
   },
 });
@@ -112,12 +111,14 @@ const popupAddCard = new PopupWithForm({
         popupAddCard.close();
         addCardForm.reset();
         addCardFormValidator.resetValidation();
+        addCardFormValidator.toggleButtonState();
       })
       .catch((err) => console.error(err))
       .finally(() => {
-        popupEditProfile.setSubmitButtonText()
-  })
-}});
+        popupEditProfile.setSubmitButtonText("Create");
+      });
+  },
+});
 
 const confirmModal = new PopupDelete({
   popupSelector: "#delete-confirmation-modal",
@@ -130,10 +131,12 @@ function createCard(data) {
     data,
     cardSelector: "#card-template",
     handleImageClick: (data) => popupWithImage.open(data),
-    handleLikeClick: (cardId) => {
+    handleLikeClick: (card) => {
       api
-        .likeCard(cardId, !card.isLiked())
-        .then((data) => {})
+        .likeCard(card._cardId, !card._isLiked)
+        .then((data) => {
+          card.toggleLike();
+        })
         .catch((err) => console.error(err));
     },
     handleDeleteClick: (cardId) => {
