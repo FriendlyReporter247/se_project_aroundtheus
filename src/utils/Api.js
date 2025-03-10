@@ -67,13 +67,12 @@ class Api {
     }).then(this._checkResponse);
   }
 
-
-  editProfileAvatar ({ url }) {
+  editProfileAvatar({ url }) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
-      body : JSON.stringify({ avatar: url }),
-      }).then(this._checkResponse);
+      body: JSON.stringify({ avatar: url }),
+    }).then(this._checkResponse);
   }
 }
 

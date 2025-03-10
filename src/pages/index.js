@@ -85,12 +85,11 @@ const popupEditProfileAvatar = new PopupWithForm({
           userAvatar: data.avatar,
         });
         editAvatarForm.reset();
-        editProfileAvatarValidator.resetValidation();
         popupEditProfileAvatar.close();
       })
       .catch((err) => console.error(err))
       .finally(() => {
-        popupEditProfile.setSubmitButtonText("Save");
+        popupEditProfileAvatar.setSubmitButtonText("Save");
       });
   },
 });
@@ -115,7 +114,7 @@ const popupAddCard = new PopupWithForm({
       })
       .catch((err) => console.error(err))
       .finally(() => {
-        popupEditProfile.setSubmitButtonText("Create");
+        popupAddCard.setSubmitButtonText("Create");
       });
   },
 });
@@ -171,6 +170,7 @@ editProfileButton.addEventListener("click", () => {
   );
   userName.value = userData.userName;
   userDescription.value = userData.userDescription;
+  editProfileFormValidator.resetValidation();
 });
 
 api
