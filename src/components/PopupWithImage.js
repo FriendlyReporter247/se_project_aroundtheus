@@ -13,7 +13,6 @@ class PopupWithImage extends Popup {
     this._image.alt = name;
     super.open();
   }
-
 }
 
 export default PopupWithImage;

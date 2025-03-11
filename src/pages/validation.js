@@ -34,7 +34,6 @@ function setEventListeners(formEl, options) {
   const inputEls = Array.from(formEl.querySelectorAll(inputSelector));
   const submitButton = formEl.querySelector(submitButtonSelector);
 
-
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", () => {
       checkInputValidity(formEl, inputEl, options);
