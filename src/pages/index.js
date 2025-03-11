@@ -86,6 +86,7 @@ const popupEditProfileAvatar = new PopupWithForm({
         });
         editAvatarForm.reset();
         popupEditProfileAvatar.close();
+        editProfileAvatarValidator.resetValidation();
       })
       .catch((err) => console.error(err))
       .finally(() => {
@@ -109,7 +110,6 @@ const popupAddCard = new PopupWithForm({
         section.addItem(card);
         popupAddCard.close();
         addCardForm.reset();
-        addCardFormValidator.resetValidation();
         addCardFormValidator.toggleButtonState();
       })
       .catch((err) => console.error(err))
